@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href=" /stylesheets/feeds.css">
+  <script src="/javascripts/feeds.js"></script>
+</head>
+
+<body>
+
+  <div class="menu">
+    <img draggable="false" class="logo" src="https://cdn1.iconfinder.com/data/icons/logotypes/32/pinterest-512.png">
+    <a href="/index" class="home">Home</a>
+    <input id="one" type="text" class="search-bar" placeholder="Search">
+    <button id="two" class="search-bar"></button>
+    <div class="icon-container">
+      <img tabindex="1" draggable="false" class="icon pp" src="https://i.pinimg.com/564x/bd/94/ce/bd94ce28cf8aefb521bac31d547f6409.jpg">
+
+
+      <!----FOCUS----->
+      <div tabindex="1" class="focus-bar bell-bar">nothing</div>
+      <!-------------------->
+      <div tabindex="1" class="focus-bar message-bar">you are alone</div>
+      <!-------------------->
+      <div tabindex="1" class="focus-bar pp-bar"><img src="https://i.pinimg.com/564x/bd/94/ce/bd94ce28cf8aefb521bac31d547f6409.jpg"><a href="https://github.com/devrimos" target="_blank">devrimos</a></div>
+      <!-------------------->
+      <div tabindex="1" class="focus-bar btn-bar">¯\_( ͡° ͜ʖ ͡°)_/¯</div>
+
+    </div>
+  </div>
+  <!--------------------------->
+  <div class="responsive-search-bar">
+    <input type="text">
+    <p class="close">❌</p>
+  </div>
+  <!--------------------------->
+
+  <div class="gallery-container">
+    <div class="grid-container" id="gridContainer">
+      <!-- Add your posts dynamically here using JavaScript -->
+      <!-- Example post -->
+      <div class="grid-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGim4hY36cx3RvZ-jUIr2NgLottlxEQl4fQg&usqp=CAU" alt="Post Image">
+        <div class="overlay">
+          <p class="username">Username</p>
+          <button class="save-btn">Save</button>
+          <div class="like-container">
+            <span class="like-icon">❤️</span>
+            <p class="like-count">10 Likes</p>
+          </div>
+          <p class="post-text">Post Text Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam, velit.</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+</html>

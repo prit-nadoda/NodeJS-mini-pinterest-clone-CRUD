@@ -1,0 +1,345 @@
+/*ROOT*/
+* {
+    outline: none;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: arial; 
+    overflow-x: hidden;
+
+
+}
+
+img {
+    user-select: none;
+}
+
+/*MENU*/
+.menu {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.menu .logo {
+    width: 60px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.menu .logo:hover {
+    background: #eeeeee;
+}
+
+.menu .home {
+    color: #fff;
+    background: #000000;
+    padding: 12px 25px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 40px;
+    margin: 0 5px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.menu .home:hover {
+    background: #c7060f;
+}
+
+.menu .search-bar {
+    width: 100%;
+    margin: 0px 5px;
+    padding: 12px 35px;
+    border-radius: 40px;
+    outline: none;
+    position: relative;
+    background-color: #efefef;
+    font-size: 15px;
+    background-image: url("https://cdn4.iconfinder.com/data/icons/music-ui-solid-24px/24/search-3-256.png");
+    background-size: 21px;
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-position: 10px;
+    color: gray;
+    border: 4px solid transparent;
+}
+
+.menu .search-bar:hover {
+    background-color: #3333;
+}
+
+.menu .search-bar:focus {
+    border: 4px solid #7bb5f0;
+    padding: 12px 20px;
+    background-image: none;
+}
+
+.menu .search-bar::placeholder {
+    user-select: none;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.icon-container .icon {
+    width: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.icon-container .icon:hover {
+    background-color: #eeeeee;
+}
+
+.icon-container .btn {
+    width: 14px;
+    padding: 5px;
+}
+
+.focus-bar {
+    width: 250px;
+    height: 350px;
+    border-radius: 15px;
+    background: #fff;
+    border: 2px solid #3333;
+    position: absolute;
+    top: 40px;
+    /*50px*/
+    left: -90px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    user-select: none;
+    z-index: 99;
+}
+
+.bell:focus+.message+.pp+.btn+.bell-bar,
+.bell-bar:focus {
+    visibility: visible;
+    opacity: 1;
+    top: 50px;
+}
+
+.message:focus+.pp+.btn+.bell-bar+.message-bar,
+.message-bar:focus {
+    visibility: visible;
+    opacity: 1;
+    top: 50px;
+}
+
+.pp:focus+.btn+.bell-bar+.message-bar+.pp-bar,
+.pp-bar:focus {
+    visibility: visible;
+    opacity: 1;
+    top: 50px;
+}
+
+.btn:focus+.bell-bar+.message-bar+.pp-bar+.btn-bar,
+.btn-bar:focus {
+    visibility: visible;
+    opacity: 1;
+    top: 50px;
+}
+
+.pp-bar a {
+    text-decoration: none;
+    padding: 5px 15px;
+    border: 2px solid #161b22;
+    color: #161b22;
+    border-radius: 5px;
+}
+
+.pp-bar {
+    flex-direction: column;
+}
+
+.pp-bar img {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.pp-bar a:hover {
+    background: #161b22;
+    color: white;
+}
+
+/*MINI SEARCH BAR*/
+#two {
+    display: none;
+    padding: 15px;
+}
+
+.responsive-search-bar {
+    max-width: 100%;
+    padding: 40px 10px;
+    text-align: center;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -300px;
+    transition: all 0.3s;
+    overflow: hidden;
+    display: none;
+    background: #fff;
+    box-shadow: 0px 0px 2px 0px #333;
+    margin: 0px 5px;
+    z-index: 99;
+}
+
+.responsive-search-bar input {
+    width: 100%;
+    height: 35px;
+    outline: none;
+    border-radius: 40px;
+    border: 4px solid transparent;
+    background-image: url("https://cdn4.iconfinder.com/data/icons/music-ui-solid-24px/24/search-3-256.png");
+    background-size: 21px;
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-position: 10px;
+    padding: 0px 15px 0px 35px;
+    background-color: #efefef;
+}
+
+.responsive-search-bar input:focus {
+    border: 4px solid #7bb5f0;
+}
+
+.responsive-search-bar p {
+    font-size: 11px;
+    padding: 11px;
+    margin-left: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+    position: absolute;
+    top: -12px;
+    right: -1px;
+    transition: all 0.3s;
+}
+
+.responsive-search-bar p:hover {
+    background: #eeeeee;
+    transform: rotate(-180deg);
+}
+
+/*POSTS*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d8d4d4;
+}
+
+.grid-container {
+    column-count: 4; /* Let the browser determine the number of columns */
+    column-gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-item {
+    break-inside: avoid-column; /* Avoid breaking inside columns */
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-bottom: 16px; /* Adjust as needed */
+}
+
+
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.overlay:hover {
+    opacity: 1;
+}
+
+.username {
+    color: #fff;
+    margin: 8px;
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+.save-btn {
+    color: #fff;
+    padding: 8px;
+    margin: 8px;
+    width: 75px;
+    border: none;
+    background-color: #bd081c;
+    cursor: pointer;
+    border-radius: 50px;
+    align-self: flex-end;
+    position: absolute;
+    top: 8px; /* Adjust the top value as needed */
+    right: 8px; /* Adjust the right value as needed */
+}
+
+.like-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.like-icon,
+.like-count {
+    position: absolute;
+    left: 50%; /* Position at 50% from the left */
+    bottom: 50%; /* Position at 50% from the top */
+    transform: translate(-50%, 50%); /* Center horizontally and vertically */
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.post-text {
+    text-align: center;
+    font-size: 14px;
+    color: #fff ;
+    margin-top: auto; /* Pushes the post text to the center */
+}

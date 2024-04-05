@@ -1,0 +1,292 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: url("/images/pinterestGrid.PNG") gray; /* Apply the base image and color */
+  background-size: cover; /* Cover the entire background */
+  position: relative; /* Establish a positioning context */
+  overflow: hidden; /* Hide scrollbars */
+}
+
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+body::before {
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+  z-index: -1;
+}
+
+body::after {
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.932) 0%, rgba(0, 0, 0, 0) 100%);
+  z-index: -1;
+}
+
+.menu {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.menu .logo {
+  width: 60px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.menu .logo:hover {
+  background: #eeeeee;
+}
+
+.menu .home {
+  color: #fff;
+  background: #000000;
+  padding: 12px 25px;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 40px;
+  margin: 0 5px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.menu .home:hover{
+  background: #c7060f;
+}
+
+.menu .search-bar {
+  width: 100%;
+  margin: 0 5px;
+  padding: 12px 35px;
+  border-radius: 40px;
+  outline: none;
+  position: relative;
+  background-color: #efefef;
+  font-size: 15px;
+  background-image: url("https://cdn4.iconfinder.com/data/icons/music-ui-solid-24px/24/search-3-256.png");
+  background-size: 21px;
+  background-repeat: no-repeat;
+  background-position: 10px;
+  color: gray;
+  border: 4px solid transparent;
+}
+
+.menu .search-bar:hover {
+  background-color: #3333;
+}
+
+.menu .search-bar:focus {
+  border: 4px solid #7bb5f0;
+  padding: 12px 20px;
+  background-image: none;
+}
+
+.menu .search-bar::placeholder {
+  user-select: none;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.icon-container .icon {
+  width: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.icon-container .icon:hover {
+  background: #eeeeee;
+}
+
+.icon-container .btn {
+  width: 14px;
+  padding: 5px;
+}
+
+.focus-bar {
+  width: 250px;
+  height: 350px;
+  border-radius: 15px;
+  background: #fff;
+  border: 2px solid #3333;
+  position: absolute;
+  top: 40px;
+  left: -90px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  user-select: none;
+  z-index: 99;
+}
+
+.bell:focus + .message + .pp + .btn + .bell-bar,
+.bell-bar:focus,
+.message:focus + .pp + .btn + .bell-bar + .message-bar,
+.message-bar:focus,
+.pp:focus + .btn + .bell-bar + .message-bar + .pp-bar,
+.pp-bar:focus,
+.btn:focus + .bell-bar + .message-bar + .pp-bar + .btn-bar,
+.btn-bar:focus {
+  visibility: visible;
+  opacity: 1;
+  top: 50px;
+}
+
+.pp-bar a {
+  text-decoration: none;
+  padding: 5px 15px;
+  border: 2px solid #161b22;
+  color: #161b22;
+  border-radius: 5px;
+}
+
+.pp-bar {
+  flex-direction: column;
+}
+
+.pp-bar img {
+  width: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.pp-bar a:hover {
+  background: #161b22;
+  color: white;
+}
+
+#two {
+  display: none;
+  padding: 15px;
+}
+
+.responsive-search-bar {
+  max-width: 100%;
+  padding: 40px 10px;
+  text-align: center;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -300px;
+  transition: all 0.3s;
+  overflow: hidden;
+  display: none;
+  background: #fff;
+  box-shadow: 0px 0px 2px 0px #333;
+  margin: 0px 5px;
+  z-index: 99;
+}
+
+.responsive-search-bar input {
+  width: 100%;
+  height: 35px;
+  outline: none;
+  border-radius: 40px;
+  border: 4px solid transparent;
+  background-image: url("https://cdn4.iconfinder.com/data/icons/music-ui-solid-24px/24/search-3-256.png");
+  background-size: 21px;
+  background-repeat: no-repeat;
+  background-position: 10px;
+  padding: 0px 15px 0px 35px;
+  background-color: #efefef;
+}
+
+.responsive-search-bar input:focus {
+  border: 4px solid #7bb5f0;
+}
+
+.responsive-search-bar p {
+  font-size: 11px;
+  padding: 11px;
+  margin-left: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+  position: absolute;
+  top: -12px;
+  right: -1px;
+  transition: all 0.3s;
+}
+
+.responsive-search-bar p:hover {
+  background: #eeeeee;
+  transform: rotate(-180deg);
+}
+
+/* Landing Page */
+
+.landing-page .content .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 140px;
+  min-height: calc(100vh - 80px);
+}
+
+@media (max-width: 767px) {
+  .landing-page .content .container {
+    gap: 0;
+    min-height: calc(100vh - 101px);
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 767px) {
+  .landing-page .content .info {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}
+
+.landing-page .content .info h1 {
+  color: black;
+  font-size: 44px;
+}
+
+.landing-page .content .info p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 15px;
+  color: black;
+}
+
+.landing-page .content .info a {
+  border: 0;
+  text-decoration: none;
+  border-radius: 100px;
+  padding: 12px 30px;
+  margin-top: 50px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #f30d19;
+}
+
+.landing-page .content .image img {
+  max-width: 100%;
+}
